@@ -38,7 +38,7 @@ class PDFViewer(Container):
     def __init__(
         self,
         path: str | Path,
-        protocol: str = "Auto",
+        protocol: str = "",
         use_keys: bool = True,
         name: str | None = None,
         id: str | None = None,
@@ -48,6 +48,8 @@ class PDFViewer(Container):
 
         Args:
             path(str): Path to a PDF file.
+            protocol(str): The protocol to use (leave empty or 'Auto' to use auto protocol)
+            use_keys(bool): Whether to use the default key assignments
             name(str): The name of this widget.
             id(str): The ID of the widget in the DOM.
             classes(str): The CSS classes for this widget.
@@ -57,7 +59,7 @@ class PDFViewer(Container):
             NotAPDFError: When the file is not a valid PDF
         """  # noqa: DOC502
         super().__init__(name=name, id=id, classes=classes, disabled=False, markup=True)
-        assert protocol in ["Auto", "TGP", "Sixel", "Halfcell", "Unicode"]
+        assert protocol in ["Auto", "TGP", "Sixel", "Halfcell", "Unicode", ""]
         self._doc: fitz.Document | None = None
         self.protocol = protocol
         self.path = path
