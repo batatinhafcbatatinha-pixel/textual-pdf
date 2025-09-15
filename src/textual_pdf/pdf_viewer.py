@@ -169,8 +169,8 @@ class PDFViewer(Container):
         Args:
             protocol(str): The protocol to use
         Raises:
-            AssertionError: When the protocol isn't `Auto`, `TGP`, `Sixel`, `Halfcell` or `Unicode`"""
-        assert protocol in ["Auto", "TGP", "Sixel", "Halfcell", "Unicode"]
+            AssertionError: When the protocol isn't `Auto`, `TGP`, `Sixel`, `Halfcell`, `Unicode` ir `<empty>` (auto)"""
+        assert protocol in ["Auto", "TGP", "Sixel", "Halfcell", "Unicode", ""]
         if self.is_mounted:
             self.refresh(recompose=True)
             self.render_page()
