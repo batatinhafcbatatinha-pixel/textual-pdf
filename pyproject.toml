@@ -3,7 +3,7 @@ name = "textual-pdf"
 version = "0.1.7"
 description = "Display PDF files in textual widgets!"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12, <3.14"
 authors = [{ name = "NSPC911" }]
 dependencies = [
   "click>=8.2.1",
@@ -26,14 +26,12 @@ classifiers = [
 Issues = "https://github.com/NSPC911/textual-pdf/issues"
 Source = "https://github.com/NSPC911/textual-pdf"
 
-[project.scripts]
-textual-pdf = "textual_pdf:main"
-
 [dependency-groups]
 dev = [
   "poethepoet>=0.37.0",
   "ruff>=0.12.10",
   "textual-dev>=1.7.0",
+  "ty>=0.0.1a22",
 ]
 
 [build-system]
